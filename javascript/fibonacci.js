@@ -1,6 +1,25 @@
 function fibonacci(num) {
-  // type your code here
+  if (num < 2) {
+    return num;
+  }
+  let fibo = [0, 1]
+  for(i = 0; i < num - 1; i++){
+    const sum = fibo[0] + fibo[1]
+    fibo = [fibo[1], sum]
+  }
+  return fibo[1];
 }
+
+// function fibonacci(num) {
+//   if (num < 2) {
+//     return num;
+//   }
+//   let fibo = [0, 1]
+//   for(i = 2; i < num + 1; i++){
+//     fibo[i] = fibo[i - 1] + fibo[i - 2]
+//   }
+//   return fibo;
+// }
 
 if (require.main === module) {
   // add your own tests in here
